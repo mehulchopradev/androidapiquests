@@ -53,12 +53,12 @@
 	</h3>
 	<p>
 		The internal REST based implementation of the api, supports the following Http Methods (Called as Verbs,
-		in a REST terminology). <br/><u><i>Note</i></u> :  The format of data exchange fixed by the api is JSON : 
+		in a REST terminology) : 
 	</p>
 	<ul>
 		<li><b>GET</b> : Used to 'get' data (resources in REST terminology) from the server. No data
 		sent in the request. Data is received from the server in JSON format.</li>
-		<li><b>POST</b> : Used to 'post' data to the server. This methos usually creates a new data (resource
+		<li><b>POST</b> : Used to 'post' data to the server. This method usually creates a new data (resource
 		in REST terminology) at the server side. Data is sent in the request in a JSON format.
 		The response sent back by the server is usually all the fields that were sent in the request
 		for a resource, along with the 'id' (id of the newly created resource at the server side)
@@ -66,8 +66,12 @@
 		is sacred, avoid sending redundant data in the response. Ideally send only the 'id' of the
 		newly created resource and other extra fields if required at the client side.
 		</li>
-		<li>PUT</li>
-		<li>DELETE</li>
+		<li>PUT : Used to 'put' data to the server. This method usually updates an existing resource
+		at the server side. Data is sent in the request in a JSON format. The response sent
+		back by the server is usually the 'id' of the resource that just got updated and other
+		extra fields if required at the client side.</li>
+		<li>DELETE : Used to 'delete' an existing resource from the server side. No data in sent
+		in the request. Usually, no data is sent even in the response.</li>
 	</ul>
   	</section>
     </div>
