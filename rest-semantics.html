@@ -73,6 +73,38 @@
 		<li>DELETE : Used to 'delete' an existing resource from the server side. No data in sent
 		in the request. Usually, no data is sent even in the response.</li>
 	</ul>
+	<h3>
+		<a class="anchor" href="#" aria-hidden="true">
+			<span class="octicon octicon-link"></span>
+		</a>
+		Http Status Codes
+	</h3>
+	<p>
+		For a REST Http call made to the server, before parsing the response data, the caller can get
+		an indication about the success/failure of the call using Http Status Codes.
+	</p>
+	<table>
+		<tr>
+			<th>Http Method</th>
+			<th>Success Status Code(s)</th>
+		</tr>
+		<tr>
+			<td>GET</td>
+			<td>200, 204</td>
+		</tr>
+		<tr>
+			<td>POST</td>
+			<td>201, 204, 303</td>
+		</tr>
+		<tr>
+			<td>PUT</td>
+			<td>200, 204, 303</td>
+		</tr>
+		<tr>
+			<td>DELETE</td>
+			<td>200</td>
+		</tr>
+	</table>
   	</section>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
