@@ -84,7 +84,7 @@
 	      </h3>
       	<p>
       	  The SimplyReliableInfra object can be used to create <code>Message</code> instances of different types,
-      	  using the create<<message-type>>OutMessage() method family.<br/><br/>
+      	  using the create&lt;&lt;message-type&gt;&gt;OutMessage() method family.<br/><br/>
       	  <code>
 	      SimplyReliableInfra obj = SimplyReliableInfra.getInstance();<br/>
 	      OutMessage postMessage = obj.createPostOutMessage(variousArguments);
@@ -114,7 +114,28 @@
       	  We can search for asynchronous Messages on the basis of their callback type, from the infrastructure
       	  using the following : <br/><br/>
       	  <code>
-      	  	List<OutMessage> messages = simplyReliableInfraObj.getExistingMessagesByCallbackType(callbackType)
+      	  	List&lt;OutMessage&gt; messages = simplyReliableInfraObj.getExistingMessagesByCallbackType(callbackType)
+      	  </code>
+      	</p>
+      	<h3>
+		      <a class="anchor" href="#" aria-hidden="true">
+			      <span class="octicon octicon-link"></span>
+		      </a>
+		      SimplyReliableInfraIntf Interface
+	      </h3>
+      	<p>
+      	  Interface that defines all the methods that can be called at a specific point in the lifecycle
+      	  of the SimplyReliable API. The SimplyReliableInfra object stores the observer list for the SimplyReliableInfraIntf.
+      	  <br/>
+      	  Object wishing to become observer for the events from the SimplyReliableInfra object must implement the
+      	  SimplyReliableInfraIntf interface and call the following<br/><br/>
+      	  <code>
+      	  	simplyReliableInfraObj.attach(objectWishingToBecomeObserver)
+      	  </code><br/><br/>
+      	  <b>Note:</b>The SimplyReliableInfraIntf observer must remove itself from the observer list of the
+      	  SimplyReliableInfra object, once its work is done.<br/><br/>
+      	  <code>
+      	  	simplyReliableInfraObj.detach(observerWishingToRemoveItselfFromObserverList)
       	  </code>
       	</p>
     </div>
