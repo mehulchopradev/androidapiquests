@@ -55,10 +55,40 @@
 	      </h3>
       	<p>
       	  The first thing to do before creating messages and sending to the server, is to initialize the SimplyReliable
-      	  API. <br/><br/>
+      	  API. <br/>
       	  <code>
 	      SimplyReliableInfra.init(ROOT_URL, customHeadersIfAny, applicationContextObject);
 	  </code>
+	  IMP! In an Android environment, the Application class onCreate() qualifies to be the best place
+	  for initializing the API.
+      	</p>
+      	<h3>
+		      <a class="anchor" href="#" aria-hidden="true">
+			      <span class="octicon octicon-link"></span>
+		      </a>
+		      Singleton Instance
+	      </h3>
+      	<p>
+      	  The SimplyReliableInfra object is implemented in the API as a singleton instance. In order to get a reference
+      	  of this singleton instance : 
+      	  <code>
+	      SimplyReliableInfra obj = SimplyReliableInfra.getInstance();
+	  </code><br/>
+	  IMP! Make sure to call init() before asking for this singleton object.
+      	</p>
+      	<h3>
+		      <a class="anchor" href="#" aria-hidden="true">
+			      <span class="octicon octicon-link"></span>
+		      </a>
+		      Creating Different Message Types
+	      </h3>
+      	<p>
+      	  The SimplyReliableInfra object can be used to create <code>Message</code> instances of different types,
+      	  using the create<<message-type>>OutMessage() method family.
+      	  <code>
+	      SimplyReliableInfra obj = SimplyReliableInfra.getInstance();
+	      OutMessage postMessage = obj.createPostOutMessage(variousArguments);
+	  </code><br/>
       	</p>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
