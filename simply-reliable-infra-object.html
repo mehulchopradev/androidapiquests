@@ -56,12 +56,13 @@
       	<p>
       	  The first thing to do before creating messages and sending to the server, is to initialize the SimplyReliable
       	  API.
+      	  <code>
+	      	ruby
+	            require 'redcarpet'
+	            markdown = Redcarpet.new("Hello World!")
+	            puts markdown.to_html
+	  </code>
       	</p>
-      	```ruby
-            require 'redcarpet'
-            markdown = Redcarpet.new("Hello World!")
-            puts markdown.to_html
-          ```
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
   </body>
