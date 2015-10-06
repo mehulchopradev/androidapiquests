@@ -86,11 +86,36 @@
       	  The SimplyReliableInfra object can be used to create <code>Message</code> instances of different types,
       	  using the create<<message-type>>OutMessage() method family.<br/><br/>
       	  <code>
-	      SimplyReliableInfra obj = SimplyReliableInfra.getInstance();
+	      SimplyReliableInfra obj = SimplyReliableInfra.getInstance();<br/>
 	      OutMessage postMessage = obj.createPostOutMessage(variousArguments);
 	  </code><br/><br/>
 	  The above code creates a PostMessage. Similarly other message types can be created using the
-	  appropriate methods.
+	  appropriate methods.<br/><br/>
+	  <code>
+	  	SimplyReliableInfra obj = SimplyReliableInfra.getInstance();<br/>
+	      	OutMessage postMessage = obj.createPostOutMessage(initialArguments, callbackObj);
+	  </code><br/><br/>
+	  The above code creates a PostMessage that is asynchronous in nature and can be used in offline
+	  conditions too.<br/><br/>
+	  <code>
+	  	SimplyReliableInfra obj = SimplyReliableInfra.getInstance();<br/>
+	      	OutMessage postMessage = obj.createPostOutMessage(argumentsWithoutAnyCallbackObjPassed);
+	  </code><br/><br/>
+	  The above code creates a PostMessage that is synchronous in nature and can be used only in online
+	  conditions only.<br/><br/>
+      	</p>
+      	<h3>
+		      <a class="anchor" href="#" aria-hidden="true">
+			      <span class="octicon octicon-link"></span>
+		      </a>
+		      Search Messages by Callback type
+	      </h3>
+      	<p>
+      	  We can search for asynchronous Messages on the basis of their callback type, from the infrastructure
+      	  using the following : <br/><br/>
+      	  <code>
+      	  	List<OutMessage> messages = simplyReliableInfraObj.getExistingMessagesByCallbackType(callbackType)
+      	  </code>
       	</p>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
