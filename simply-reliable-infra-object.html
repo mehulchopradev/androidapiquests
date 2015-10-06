@@ -34,6 +34,34 @@
 
         <p class="header">This project is maintained by <a class="header name" href="https://github.com/mehulchopradev">mehulchopradev</a></p>
       </header>
+      <section>
+        <h3>
+		      <a class="anchor" href="#" aria-hidden="true">
+			      <span class="octicon octicon-link"></span>
+		      </a>
+		      SimplyReliableInfra class
+	      </h3>
+      	<p>
+      	  One of the core and the most important classes of the API. This class is responsible for setting up the
+      	  infrastructure and initialization required by the API. Some of the common functions of this class is to
+      	  help the API user to build new messages, sending messages, setting the custom HTTP headers, sending 
+      	  infrastructure lifecycle events to all, to name a few.
+      	</p>
+      	<h3>
+		      <a class="anchor" href="#" aria-hidden="true">
+			      <span class="octicon octicon-link"></span>
+		      </a>
+		      Initializing the API
+	      </h3>
+      	<p>
+      	  The first thing to do before creating messages and sending to the server, is to initialize the SimplyReliable
+      	  API.
+      	  ```ruby
+            require 'redcarpet'
+            markdown = Redcarpet.new("Hello World!")
+            puts markdown.to_html
+          ```
+      	</p>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
   </body>
