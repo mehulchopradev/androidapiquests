@@ -136,7 +136,13 @@
       	  SimplyReliableInfra object, once its work is done.<br/><br/>
       	  <code>
       	  	simplyReliableInfraObj.detach(observerWishingToRemoveItselfFromObserverList)
-      	  </code>
+      	  </code><br/><br/>
+      	  From the SimplyReliableInfra subject side, use the publishXXXX() family, for publishing SimplyReliableInfra
+      	  object lifecycle methods to all its observers.<br/><br/>
+      	  <code>
+      	  	simplyReliableInfraObj.publishServerDown()
+      	  </code><br/><br/>
+      	  The above publishes the 'server down' event to all its observers.
       	</p>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
