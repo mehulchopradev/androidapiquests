@@ -62,7 +62,75 @@
 	      PayLoadMessage class
 	</h3>
       	<p>
-      	  
+      	  Represents all the Messages that will have data in the request to be sent to the server. The API will send
+      	  the data in JSON format, in the request body. The API user just needs to be pass any object
+      	  to the PayLoadMessage, and the API will convert the object to the appropriate JSON representation.
+      	  (It uses the GSON library for the conversion). Also the object is required to be Serializable as the API
+      	  will internally store the serialized object in its internal data store.
+      	</p>
+      	<p>
+      	   Based on the REST semantics and the HTTP method of the call, the user would either create a PostMessage
+      	   (a new resource getting created at the server side) or a PutMessage (an existing resource getting updated
+      	   at the server side). Both of them are subclasses of the PayLoadMessage class.
+      	</p>
+      	<p>
+      	   The minimum properties required by a PayLoadMessage is : <br/>
+      	   <ul>
+      	   	<li>Resource</li>
+      	   	<li>Serializable object representing the request data</li>
+      	   	<li>Type object representing the object type to which the response JSON should be converted to</li>
+      	   </ul>
+      	</p>
+      	<h3>
+	      <a class="anchor" href="#" aria-hidden="true">
+		      <span class="octicon octicon-link"></span>
+	      </a>
+	      GetMessage class
+	</h3>
+	<p>
+		Represents all the Messages that will ask for data from the server. A GetMessage cannot send any
+		data in the request to the server. The only data that can be sent to the server in the GetMessage
+		request, is through QueryParams.
+	</p>
+	<p>
+      	   The minimum properties required by a GetMessage is : <br/>
+      	   <ul>
+      	   	<li>Resource</li>
+      	   	<li>Type object representing the object type to which the response JSON should be converted to</li>
+      	   </ul>
+      	</p>
+      	<h3>
+	      <a class="anchor" href="#" aria-hidden="true">
+		      <span class="octicon octicon-link"></span>
+	      </a>
+	      MultiPartGetMessage class
+	</h3>
+	<p>
+		A special subclass of GetMessage. Used to download files from the server.
+	</p>
+	<p>
+      	   The minimum properties required by a MultiPartGetMessage is : <br/>
+      	   <ul>
+      	   	<li>Resource</li>
+      	   	<li>Local file path(till the name of the file) where the downloaded file must be saved</li>
+      	   </ul>
+      	</p>
+      	<h3>
+	      <a class="anchor" href="#" aria-hidden="true">
+		      <span class="octicon octicon-link"></span>
+	      </a>
+	      DeleteMessage class
+	</h3>
+	<p>
+		Represents a Message that is sent to the server to delete an existing resource from the server.
+		A DeleteMessage cannot send any data in the request body to the server. The only data that can be
+		sent to the server is the resource id as path params in the Resource path.
+	</p>
+	<p>
+      	   The minimum properties required by a DeleteMessage is : <br/>
+      	   <ul>
+      	   	<li>Resource</li>
+      	   </ul>
       	</p>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
